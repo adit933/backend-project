@@ -14,9 +14,9 @@ class ApiError extends Error{
         this.errors = errors
 
 
-        if(statck)
+        if(stack)
         {
-            this.satck = statck
+            this.satck = stack
         }
         else
         {

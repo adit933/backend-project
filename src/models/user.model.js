@@ -68,7 +68,7 @@ userSchema.pre("save" , async function(next)//it is a time taking process theref
     {
         if(!this.isModified("password")) next()//if password is specifically modified then only excrypt it otherwise leave it as it was
 
-        this.password = bcrypt.hash(this.password , 10)
+        this.password = await bcrypt.hash(this.password , 10)
         next()
     }
 )//avoid using () => {} beacuse of the absence of this reference
